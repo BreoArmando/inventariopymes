@@ -1,0 +1,52 @@
+[
+    {
+        "id": "5c88fa8cf4afda39709c2955",
+        "marca": "HP",
+        "modelo": "Pavillion i5",
+        "nome": "Ordenador portátil",
+        "prezo": "1200.22",
+        "peso": "1.3kg"
+    },
+    {
+        "id": "5c88fa8cf4afda39709c2954",
+        "marca": "Toshiba",
+        "modelo": "USB 3.0 HDD",
+        "nome": "Disco externo",
+        "capacidade": "1TB",
+        "prezo": "45",
+        "peso": "800gr"
+    },
+    {
+        "id": "5c88fa8cf4afda39709c2953",
+        "marca": "Canon",
+        "modelo": "Smart Prixma",
+        "nome": "Impresora de tinta",
+        "prezo": "123.35",
+        "peso": "1.6kg"
+    },
+    {
+        "id": "5c88fa8cf4afda39709c2952",
+        "marca": "Sony",
+        "modelo": "Xperia Arc S",
+        "nome": "Teléfono móbil",
+        "prezo": "244.35",
+        "peso": "250gr"
+    },
+    {
+        "id": "5c88fa8cf4afda39709c2951",
+        "marca": "Nikon",
+        "modelo": "D3500",
+        "nome": "Cámara DSLR",
+        "prezo": "598.99",
+        "peso": "415gr"
+    },
+    {
+        "id": "5c88fa8cf4afda39709c2950",
+        "marca": "APC",
+        "modelo": "Back-UPS BX1600MI-GR SAI 1600VA 900W",
+        "nome": "Batería externa SAI",
+        "dimensiones": "140x390x190mm",
+        "prezo": "219",
+        "peso": "10kg"
+    }
+]
