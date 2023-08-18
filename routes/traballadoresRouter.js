@@ -1,16 +1,16 @@
 const express = require("express");
 
-const usuariosController = require(`${__dirname}/../controllers/traballadorController`)
+const traballadorController = require(`${__dirname}/../controllers/traballadorController`)
 
 const router = express.Router();
 
 router.route("/")
-    .get(usuariosController.getAllTraballadores)
-    .post(usuariosController.createTraballador);
+    .get(traballadorController.getAllTraballadores)
+    .post(traballadorController.createTraballador);
 
 router.route("/:id")
-    .get(usuariosController.getTraballador)
-    .patch(usuariosController.updateTraballador)
-    .delete(usuariosController.deleteTraballador);
+    .get(traballadorController.getTraballador)
+    .patch(traballadorController.updateTraballador)
+    .delete(traballadorController.deleteTraballador);
 
 module.exports = router;

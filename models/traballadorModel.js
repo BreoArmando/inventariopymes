@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const traballadorSchema = mongoose.Schema(
+const traballadorSchema = new mongoose.Schema(
     {
         nome: {
             type: String,
@@ -32,6 +32,6 @@ const traballadorSchema = mongoose.Schema(
     }
 );
 
-const Traballador = mongoose.model("Traballador", traballadorSchema);
+const Traballador = mongoose.model("traballadores", traballadorSchema);
 
 module.exports = Traballador;

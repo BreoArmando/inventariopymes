@@ -1,23 +1,32 @@
-const fs = require("fs");
-
-const traballadoresPath = `${__dirname}/../data/traballadores.json`;
-const traballadores = JSON.parse(fs.readFileSync(traballadoresPath));
+const Traballador = require(`${__dirname}/../models/traballadorModel`);
 
 /**
  * Get all users stored in source data.
  * @param {Request} req 
  * @param {Response} res 
- */
-exports.getAllTraballadores = (req, res) =>
+*/
+exports.getAllTraballadores = async (req, res) =>
 {
-    res.status(200).json({
-        status: "success",
-        results: traballadores.length,
-        data:
-        {
-            traballadores
-        }
-    });
+    try
+    {
+        const traballadores = await Traballador.find();
+
+        res.status(200).json({
+            status: "success",
+            results: traballadores.length,
+            data:
+            {
+                traballadores
+            }
+        });
+    }
+    catch(err)
+    {
+        res.status(400).json({
+            status: "fail",
+            message: err
+        })
+    }
 };
 
 /**
@@ -25,7 +34,29 @@ exports.getAllTraballadores = (req, res) =>
  * @param {Request} req 
  * @param {Response} res 
  */
-exports.getTraballador = (req, res) => {}
+exports.getTraballador = async (req, res) => 
+{
+    try
+    {
+        const traballador = await Traballador.findById(req.params.id);
+
+        res.status(200).json({
+            status: "success",
+            data:
+            {
+                traballador
+            }
+        });
+    }
+    catch (error)
+    {
+        res.status(400).json({
+            status: "fail",
+            message: error
+        });
+    }
+    
+}
 
 /**
  * Creates one User object, registers it in the DDBB and returns it as a HTTP response.
@@ -35,13 +66,12 @@ exports.getTraballador = (req, res) => {}
 exports.createTraballador = (req, res) => 
 {
     const newTraballador = Object.assign(req.body);
-    console.log(newTraballador);
 
     res.status(200).json({
         status: "success",
         data:
         {
-            newTraballador
+            novoTraballador: newTraballador
         }
     });
 };

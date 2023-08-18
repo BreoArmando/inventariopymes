@@ -1,15 +1,14 @@
-const fs = require("fs");
-
-const produtosPath = `${__dirname}/../data/produtos.json`;
-const produtos = JSON.parse(fs.readFileSync(produtosPath));
+const Produto = require(`${__dirname}/../models/produtoModel`);
 
 /**
  * Get all products stored in source data.
  * @param {Request} req
  * @param {Response} res 
  */
-exports.getAllProdutos = (req, res) =>
+exports.getAllProdutos = async (req, res) =>
 {
+    const produtos = await Produto.find();
+
     res.status(200).json({
         status: "success",
         results: produtos.length,
